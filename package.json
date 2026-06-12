@@ -1,0 +1,21 @@
+{
+  "name": "base-spend-guard",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Open-source spending policy guard for Base agents: USDC budgets, allow-lists, approval gates, pre-tx simulation, signed receipts.",
+  "license": "MIT",
+  "workspaces": [
+    "packages/core",
+    "packages/sdk",
+    "packages/mcp",
+    "examples/base-usdc"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "clean": "rm -rf packages/*/dist node_modules packages/*/node_modules"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
