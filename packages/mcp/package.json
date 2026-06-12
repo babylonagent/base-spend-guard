@@ -1,0 +1,29 @@
+{
+  "name": "@spendguard/mcp",
+  "version": "0.1.0",
+  "description": "MCP server exposing Base Spend Guard policy checks to any agent runtime.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "spendguard-mcp": "./dist/server.js"
+  },
+  "main": "./dist/server.js",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/server.ts --format esm --clean",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "@spendguard/core": "0.1.0",
+    "@spendguard/sdk": "0.1.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.10",
+    "tsup": "^8.3.5",
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.8"
+  }
+}

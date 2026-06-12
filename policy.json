@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "chainId": 8453,
+  "token": "USDC",
+  "limits": {
+    "maxPerTxUsd": "100",
+    "maxPerDayUsd": "500",
+    "maxPerTool": { "default": "50" }
+  },
+  "recipients": {
+    "allow": ["0x1111111111111111111111111111111111111111"],
+    "block": []
+  },
+  "approval": { "thresholdUsd": "100" },
+  "rules": {
+    "blockUnknownSpender": true,
+    "blockUnlimitedApproval": true,
+    "simulateBeforeSend": false
+  }
+}
