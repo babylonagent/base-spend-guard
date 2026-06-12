@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/babylonagent/base-spend-guard/policy.schema.json",
+  "title": "Base Spend Guard Policy",
+  "type": "object",
+  "required": ["version", "chainId", "token"],
+  "additionalProperties": false,
+  "properties": {
+    "version": { "type": "integer", "minimum": 1 },
+    "chainId": { "type": "integer", "minimum": 1, "description": "8453 for Base mainnet" },
+    "token": { "type": "string", "minLength": 1 },
+    "limits": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "maxPerTxUsd": { "$ref": "#/$defs/decimal" },
+        "maxPerDayUsd": { "$ref": "#/$defs/decimal" },
+        "maxPerTool": {
+          "type": "object",
+          "additionalProperties": { "$ref": "#/$defs/decimal" },
+          "description": "Per-tool caps; 'default' applies to tools without a specific entry"
+        }
+      }
+    },
+    "recipients": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "allow": { "type": "array", "items": { "$ref": "#/$defs/address" } },
+        "block": { "type": "array", "items": { "$ref": "#/$defs/address" } }
+      }
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "thresholdUsd": { "$ref": "#/$defs/decimal" }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "blockUnknownSpender": { "type": "boolean" },
+        "blockUnlimitedApproval": { "type": "boolean" },
+        "simulateBeforeSend": { "type": "boolean" }
+      }
+    }
+  },
+  "$defs": {
+    "decimal": { "type": "string", "pattern": "^\\d+(\\.\\d+)?$" },
+    "address": { "type": "string", "pattern": "^0x[0-9a-fA-F]{40}$" }
+  }
+}
