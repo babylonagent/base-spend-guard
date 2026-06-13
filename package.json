@@ -8,6 +8,8 @@
     "packages/core",
     "packages/sdk",
     "packages/mcp",
+    "packages/agentkit",
+    "apps/dashboard",
     "examples/base-usdc"
   ],
   "scripts": {

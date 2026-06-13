@@ -36,6 +36,8 @@ verify offline.
 | `@spendguard/core` | Deterministic policy engine, ERC20 decoder, ledger, types. Zero IO. |
 | `@spendguard/sdk` | `SpendGuardClient`: policy check + Base RPC simulation + signed receipts. |
 | `@spendguard/mcp` | MCP stdio server exposing `check_spend_policy` and `get_spend_summary`. |
+| `@spendguard/agentkit` | Coinbase AgentKit-compatible ActionProvider for spend checks and summaries. |
+| `@spendguard/dashboard` | Browser policy preview app for testing policies before wiring an agent. |
 
 ## Quickstart
 
@@ -80,6 +82,13 @@ Run the example:
 git clone https://github.com/babylonagent/base-spend-guard
 cd base-spend-guard && npm install && npm run build
 node examples/base-usdc/index.mjs
+```
+
+Run the browser dashboard locally:
+
+```bash
+npm run build --workspace apps/dashboard
+npm run dev --workspace apps/dashboard
 ```
 
 ## Decision model
