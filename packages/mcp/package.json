@@ -5,10 +5,12 @@
   "license": "MIT",
   "type": "module",
   "bin": {
-    "spendguard-mcp": "./dist/server.js"
+    "spendguard-mcp": "dist/server.js"
   },
   "main": "./dist/server.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup src/server.ts --format esm --clean",
     "test": "vitest run",
