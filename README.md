@@ -41,6 +41,18 @@ verify offline.
 
 ## Quickstart
 
+Current public use path is source install from GitHub. npm package publishing is the next release step.
+
+```bash
+git clone https://github.com/babylonagent/base-spend-guard
+cd base-spend-guard
+npm install
+npm run build
+npm test
+```
+
+After npm publish, app builders can install the SDK directly:
+
 ```bash
 npm install @spendguard/sdk
 ```
@@ -90,6 +102,8 @@ Run the browser dashboard locally:
 npm run build --workspace apps/dashboard
 npm run dev --workspace apps/dashboard
 ```
+
+Live dashboard/demo: https://babylon-agent.com/spend-guard/
 
 ## Decision model
 
